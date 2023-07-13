@@ -1,7 +1,6 @@
 defmodule Pento.Catalog.Product.Query do
   import Ecto.Query
   alias Pento.Catalog.Product
-  alias Pento.Survey.Rating
 
   def base, do: Product
 
@@ -11,7 +10,7 @@ defmodule Pento.Catalog.Product.Query do
   end
 
   def preload_user_ratings(query, user) do
-    ratings_query = Rating.Query.preload_user(user)
+    ratings_query = Pento.Survey.Rating.Query.preload_user(user)
 
     query
     |> preload(ratings: ^ratings_query)
