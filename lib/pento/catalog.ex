@@ -33,4 +33,9 @@ defmodule Pento.Catalog do
     Product.changeset_markdown_price(product, attrs)
     |> Repo.update()
   end
+
+  def list_products_with_user_rating(user) do
+    Product.Query.with_user_ratings(user)
+    |> Repo.all()
+  end
 end
