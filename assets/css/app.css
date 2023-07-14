@@ -104,8 +104,9 @@
 }
 .user-activity-component h2,
 h3 {
-  background: rebeccapurple;
-  color: white;
+  /* Whoever wrote this book has really bad taste */
+  /* background: rebeccapurple; */
+  /* color: white; */
   padding: 10px;
 }
 .user-activity-component ul,

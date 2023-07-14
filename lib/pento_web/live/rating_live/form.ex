@@ -29,6 +29,12 @@ defmodule PentoWeb.RatingLive.Form do
       ) do
     IO.inspect(rating_params, label: "Rating params")
 
+    rating_params =
+      Map.merge(rating_params, %{
+        "product_id" => product.id,
+        "user_id" => socket.assigns.current_user.id
+      })
+
     case Survey.create_rating(rating_params) do
       {:ok, rating} ->
         product = %{product | ratings: [rating]}

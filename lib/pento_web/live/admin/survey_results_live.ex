@@ -2,7 +2,6 @@ defmodule PentoWeb.Admin.SurveyResultsLive do
   use PentoWeb, :live_component
   use PentoWeb, :chart_live
   alias Pento.Catalog
-  alias Contex.Plot
 
   def update(assigns, socket) do
     {:ok,
@@ -25,8 +24,16 @@ defmodule PentoWeb.Admin.SurveyResultsLive do
      |> assign_chart_svg()}
   end
 
-  defp assign_age_group_filter(socket, age_group_filter \\ "all") do
+  defp assign_age_group_filter(socket, age_group_filter) do
     assign(socket, :age_group_filter, age_group_filter)
+  end
+
+  defp assign_age_group_filter(%{assigns: %{age_group_filter: age_group_filter}} = socket) do
+    assign(socket, :age_group_filter, age_group_filter)
+  end
+
+  defp assign_age_group_filter(socket) do
+    assign(socket, :age_group_filter, "all")
   end
 
   defp assign_products_with_average_ratings(
