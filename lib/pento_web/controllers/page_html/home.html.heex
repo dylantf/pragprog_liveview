@@ -6,10 +6,12 @@
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
       <%= if @current_user do %>
+        <.link href={~p"/admin/dashboard"}>Dashboard</.link>
         <.link href={~p"/products"}>Products</.link>
         <.link href={~p"/survey"}>Survey</.link>
         <.link href={~p"/users/settings"}>Settings</.link>
         <.link href={~p"/users/log_out"} method="delete">Log out</.link>
+        <b><%= @current_user.email %></b>
       <% else %>
         <.link href={~p"/users/register"}>Register</.link>
         <.link href={~p"/users/log_in"}>Log in</.link>
