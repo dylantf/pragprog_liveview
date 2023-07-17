@@ -1,7 +1,14 @@
 <header class="px-4 sm:px-6 lg:px-8">
   <div class="flex items-center justify-between py-3 text-sm">
     <div class="flex items-center gap-4 font-bold">
-      <.link href={~p"/"}>PENTO WEB!!!</.link>
+      <.link href={~p"/"}>
+        <svg viewBox="0 0 55 55" class="h-6">
+          <rect x="0" y="0" width="55" height="55" fill="#DDD" />
+          <rect x="10" y="5" width="30" height="30" fill="#689042"></rect>
+          <rect x="10" y="35" width="15" height="15" fill="#689042"></rect>
+        </svg>
+      </.link>
+      <p class="px-2 text-[0.8125rem] font-heavy leading-6">Pentominos</p>
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
       <%= if @current_user do %>
